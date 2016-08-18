@@ -1,12 +1,4 @@
---[[ 
-▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
-▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY Th3_BOOS                        ▀▄ ▄▀ 
-▀▄ ▄▀     BY Th3_BOOS (@Th3_BOOS)           ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY Th3_BOOS               ▀▄ ▄▀   
-▀▄ ▄▀          Orders  : سوبر كروب           ▀▄ ▄▀ 
-▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
---]]
+
 local function check_member_super(cb_extra, success, result)
   local receiver = cb_extra.receiver
   local data = cb_extra.data
@@ -45,7 +37,7 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-	  local text = 'تم تفعيل المجموعه بنجاح🌞'
+	  local text = 'تم تفعيل المجموعه بنجاح💠🏌'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -69,7 +61,7 @@ local function check_member_superrem(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-	  local text = 'تم تعطيل المجموعه😑👎'
+	  local text = 'تم تعطيل المجموعة بنجاح 🏂💠'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -665,7 +657,7 @@ function get_message_callback(extra, success, result)
 	elseif get_cmd == "مسح" then
 		delete_msg(result.id, ok_cb, false)
 		savelog(msg.to.id, name_log.." ["..msg.from.id.."] deleted a message by reply")
-	elseif get_cmd == "رفع اداري" then
+	elseif get_cmd == "رفع vip" then
 		local user_id = result.from.peer_id
 		local channel_id = "channel#id"..result.to.peer_id
 		channel_set_admin(channel_id, "user#id"..user_id, ok_cb, false)
@@ -676,7 +668,7 @@ function get_message_callback(extra, success, result)
 		end
 		savelog(msg.to.id, name_log.." ["..msg.from.id.."] set: ["..user_id.."] as admin by reply")
 		send_large_msg(channel_id, text)
-	elseif get_cmd == "تنزيل اداري" then
+	elseif get_cmd == "تنزيل vip" then
 		local user_id = result.from.peer_id
 		local channel_id = "channel#id"..result.to.peer_id
 		if is_admin2(result.from.peer_id) then
@@ -704,9 +696,9 @@ function get_message_callback(extra, success, result)
 			save_data(_config.moderation.data, data)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] set: ["..result.from.peer_id.."] as owner by reply")
 			if result.from.username then
-				text = "@"..result.from.username.." [ "..result.from.peer_id.." ] ولآَ يـهمَكَ تمَ ✔️ رفعـكَ مـديـر 👍 سفنجهَ كلـبيَ 💔"
+				text = "@"..result.from.username.." [ "..result.from.peer_id.." ] تم رفعك مدير  💠✔️"
 			else
-				text = "[ "..result.from.peer_id.." ] ولآَ يـهمَكَ تمَ ✔️ رفعـكَ مـديـر 👍 سفنجهَ كلـبيَ 💔"
+				text = "[ "..result.from.peer_id.." تم رفعك مدير 💠✔️"
 			end
 			send_large_msg(channel_id, text)
 		end
@@ -782,7 +774,7 @@ local function cb_user_info(extra, success, result)
 			text = "[ "..result.peer_id.." ] has been set as an admin"
 		end
 			send_large_msg(receiver, text)]]
-	if get_cmd == "تنزيل اداري" then
+	if get_cmd == "تنزيل vip" then
 		if is_admin2(result.peer_id) then
 			return send_large_msg(receiver, "لآ تمسَلت بكَيفكَ لآَ يمكَنَكَ تنزَيل أدأريَ 😂")
 		end
@@ -890,7 +882,7 @@ local function callbackres(extra, success, result)
 		local user_id = result.peer_id
 		local user = "user#id"..result.peer_id
 		demote2(receiver, member_username, user_id)
-	elseif get_cmd == "تنزيل اداري" then
+	elseif get_cmd == "تنزيل vip" then
 		local user_id = "user#id"..result.peer_id
 		local channel_id = extra.channel
 		if is_admin2(result.peer_id) then
@@ -965,7 +957,7 @@ if get_cmd == "channel_block" then
       return
     end
   end
-elseif get_cmd == "رفع اداري" then
+elseif get_cmd == "رفع vip" then
    for k,v in pairs(result) do
     vusername = v.username
     vpeer_id = tostring(v.peer_id)
@@ -1089,7 +1081,7 @@ local function run(msg, matches)
 				return
 			end
 			if is_super_group(msg) then
-				return reply_msg(msg.id, '👈 ألمَجمَوَعــهَ بألــتأكيَدَ مفعَلهَ ✔️..', ok_cb, false)
+				return reply_msg(msg.id, 'المجموعة مفعلة مسبقاً 🌞🖐🏾..', ok_cb, false)
 			end
 			print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") added")
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] added SuperGroup")
@@ -1100,7 +1092,7 @@ local function run(msg, matches)
 
 		if matches[1] == 'تعطيل' and is_admin1(msg) and not matches[2] then
 			if not is_super_group(msg) then
-				return reply_msg(msg.id, '👈 ألمَجمَوَعــهَ بألــتأكيَدَ تَمَ تَعَطيَلهَأَ ✔️..', ok_cb, false)
+				return reply_msg(msg.id, 'المجموعة معطله سابقاً ❌❗️..', ok_cb, false)
 			end
 			print("SuperGroup "..msg.to.print_name.."("..msg.to.id..") removed")
 			superrem(msg)
@@ -1313,26 +1305,26 @@ local function run(msg, matches)
 			chaannel_kick(receiver, user, ok_cb, false)
 		end]]
 
-			if matches[1] == 'رفع اداري' then
+			if matches[1] == 'رفع vip' then
 				if not is_support(msg.from.id) and not is_owner(msg) then
 					return
 				end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
-					get_cmd = 'رفع اداري',
+					get_cmd = 'رفع vip',
 					msg = msg
 				}
 				setadmin = get_message(msg.reply_id, get_message_callback, cbreply_extra)
-			elseif matches[1] == 'رفع اداري' and string.match(matches[2], '^%d+$') then
+			elseif matches[1] == 'رفع vip' and string.match(matches[2], '^%d+$') then
 			--[[]	local receiver = get_receiver(msg)
 				local user_id = "user#id"..matches[2]
 				local get_cmd = 'setadmin'
 				user_info(user_id, cb_user_info, {receiver = receiver, get_cmd = get_cmd})]]
-				local	get_cmd = 'رفع اداري'
+				local	get_cmd = 'رفع vip'
 				local	msg = msg
 				local user_id = matches[2]
 				channel_get_users (receiver, in_channel_cb, {get_cmd=get_cmd, receiver=receiver, msg=msg, user_id=user_id})
-			elseif matches[1] == 'رفع اداري' and not string.match(matches[2], '^%d+$') then
+			elseif matches[1] == 'رفع vip' and not string.match(matches[2], '^%d+$') then
 				--[[local cbres_extra = {
 					channel = get_receiver(msg),
 					get_cmd = 'setadmin'
@@ -1341,7 +1333,7 @@ local function run(msg, matches)
 				local username = string.gsub(matches[2], '@', '')
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] set admin @"..username)
 				resolve_username(username, callbackres, cbres_extra)]]
-				local	get_cmd = 'رفع اداري'
+				local	get_cmd = 'رفع vip'
 				local	msg = msg
 				local username = matches[2]
 				local username = string.gsub(matches[2], '@', '')
@@ -1349,25 +1341,25 @@ local function run(msg, matches)
 			end
 		end
 
-		if matches[1] == 'تنزيل اداري' then
+		if matches[1] == 'تنزيل vip' then
 			if not is_support(msg.from.id) and not is_owner(msg) then
 				return
 			end
 			if type(msg.reply_id) ~= "nil" then
 				local cbreply_extra = {
-					get_cmd = 'تنزيل اداري',
+					get_cmd = 'تنزيل vip',
 					msg = msg
 				}
 				demoteadmin = get_message(msg.reply_id, get_message_callback, cbreply_extra)
-			elseif matches[1] == 'تنزيل اداري' and string.match(matches[2], '^%d+$') then
+			elseif matches[1] == 'تنزيل vip' and string.match(matches[2], '^%d+$') then
 				local receiver = get_receiver(msg)
 				local user_id = "user#id"..matches[2]
-				local get_cmd = 'تنزيل اداري'
+				local get_cmd = 'تنزيل vip'
 				user_info(user_id, cb_user_info, {receiver = receiver, get_cmd = get_cmd})
-			elseif matches[1] == 'تنزيل اداري' and not string.match(matches[2], '^%d+$') then
+			elseif matches[1] == 'تنزيل vip' and not string.match(matches[2], '^%d+$') then
 				local cbres_extra = {
 					channel = get_receiver(msg),
-					get_cmd = 'تنزيل اداري'
+					get_cmd = 'تنزيل vip'
 				}
 				local username = matches[2]
 				local username = string.gsub(matches[2], '@', '')
@@ -2003,10 +1995,10 @@ return {
 	"^(ضع رابط)$",
 	"^(الرابط)$",
 	"^(الايدي) (.*)$",
-	"^(رفع اداري) (.*)$",
-	"^(رفع اداري)",
-	"^(تنزيل اداري) (.*)$",
-	"^(تنزيل اداري)",
+	"^(رفع vip) (.*)$",
+	"^(رفع vip)",
+	"^(تنزيل vip) (.*)$",
+	"^(تنزيل vip)",
 	"^(رفع المدير) (.*)$",
 	"^(رفع المدير)$",
 	"^(رفع ادمن) (.*)$",
@@ -2047,5 +2039,3 @@ return {
   run = run,
   pre_process = pre_process
 }
---End supergrpup.lua
---By @Th3_BOOS

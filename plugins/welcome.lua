@@ -1,14 +1,3 @@
---[[ 
-▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
-▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY Th3_BOOS                       ▀▄ ▄▀ 
-▀▄ ▄▀     BY Th3_BOOS (@Th3_BOOS)          ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY Th3_BOOS              ▀▄ ▄▀   
-▀▄ ▄▀          Welcome  : ترحيب            ▀▄ ▄▀ 
-▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
---]] 
-
-
 local add_user_cfg = load_from_file('data/add_user_cfg.lua')
 
 local function template_add_user(base, to_username, from_username, chat_name, chat_id)
@@ -69,17 +58,17 @@ local function description_rules(msg, nama)
          rules = data[tostring(msg.to.id)]["rules"]
          rules = "\nRules :\n"..rules.."\n"
       end
-      local sambutan = "❤️ آهلآَ وسَهلآَ كبَدَ روَحي 😘"..nama.."\n🌹 نَـورتَ مجـموَعـهْ 👥 '"..string.gsub(msg.to.print_name, "_", " ").."'\n🌹 يرجى اتباع القوانين لتجنب الطرد 😉 \n"
-      local text = sambutan.."لروئية قوانين المجموعة /القوانين 🙏🏿      "
+      local sambutan = "اهلا وسهلا بك داخل المجموعة 🌞🖐🏾"..nama.."\nنورت المجموعة 🌝🎈 '"..string.gsub(msg.to.print_name, "_", " ").."'\nاتبع القوانين لتجنب الطرد 🌝👏  \n"
+      local text = sambutan.."(القوانين) لمشاهدة القوانين 🌞🖖🏾     "
       local text = text..""
       local text = text.."                                               "
-      local text = text.."للخروج من المجموعة /مغادره ☹️"
+      local text = text.."(مغادرة) للخروج من المجموعة 🌞🖐🏾 "
       local text = text..""
       local text = text.."                                               "
-      local text = text.."من فضلك تابع قناة البوت❤️]"
+      local text = text.."تابع قناة البوت 💠]"
       local text = text..""
       local text = text.."                                               "
-      local text = text.." @dev_Th3_BOOS \n✋🏿☝🏿️"
+      local text = text.." https://telegram.me/joinchat/CUf-ST-UwlYXKMQWuHjVYw \n✋🏿☝🏿️"
       local receiver = get_receiver(msg)
       send_large_msg(receiver, text, ok_cb, false)
    end
@@ -108,7 +97,7 @@ local function run(msg, matches)
       description_rules(msg, nama)
    elseif matches[1] == "chat_del_user" then
        local bye_name = msg.action.user.first_name
-       return 'الله وياك كبدي سد الباب وراك 💔🌚  '..bye_name
+       return 'الله الله الله وياااك 🌝🖖🏾  '..bye_name
    end
 end
 
@@ -122,5 +111,3 @@ return {
    },
    run = run
 }
-
--- Dev by @Th3_BOOS

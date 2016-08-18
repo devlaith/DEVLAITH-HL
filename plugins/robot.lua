@@ -1,12 +1,3 @@
---[[ 
-▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
-▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY Th3_BOOS                   ▀▄ ▄▀ 
-▀▄ ▄▀     BY Th3_BOOS (@Th3_BOOS)    ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY Th3_BOOS          ▀▄ ▄▀   
-▀▄ ▄▀disable chat: تعطيل تفعيل دردشه محدد  ▀▄ ▄▀ 
-▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
---]]
 local function is_channel_disabled( receiver )
 	if not _config.disabled_channels then
 		return false
@@ -31,7 +22,7 @@ local function enable_channel(receiver)
 	_config.disabled_channels[receiver] = false
 
 	save_config()
-	return "تَمِ ✔️ تشغـيَل البوَتَ في المَجمَوعـهَ 👍"
+	return "تم تشغيل البوت داخل المجموعة ✔️🏌"
 end
 
 local function disable_channel( receiver )
@@ -42,7 +33,7 @@ local function disable_channel( receiver )
 	_config.disabled_channels[receiver] = true
 
 	save_config()
-	return "تَمِ ✔️ أطـفأءَ الـبوَتَ فـي أَلمجـموَعـهَ 👍🏻❌"
+	return "تم اطفاء البوت داخل المجموعة ❌🏌"
 end
 
 local function pre_process(msg)

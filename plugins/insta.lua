@@ -1,13 +1,3 @@
---[[ 
-▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
-▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY Th3_BOOS                  ▀▄ ▄▀ 
-▀▄ ▄▀     BY Th3_BOOS (@Th3_BOOS)    ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY Th3_BOOS          ▀▄ ▄▀   
-▀▄ ▄▀        insta  : انستا                ▀▄ ▄▀ 
-▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
---]]
-
 local access_token = "3084249803.280d5d7.999310365c8248f8948ee0f6929c2f02" -- your api key
 local function instagramUser(msg, query)
     local receiver = get_receiver(msg)
@@ -32,23 +22,23 @@ local function instagramUser(msg, query)
 	end
 	local text = ''
 	if user.data.bio ~= '' then
-		text = text.."❣ اليوزر : "..user.data.username:upper().."\n\n"
+		text = text.."💠 اليوزر : "..user.data.username:upper().."\n\n"
 	else
-		text = text.."❣ اليوزر : "..user.data.username:upper().."\n"
+		text = text.."💠 اليوزر : "..user.data.username:upper().."\n"
 	end
 	if user.data.bio ~= '' then
 		text = text..user.data.bio.."\n\n"
 	end
 	if user.data.full_name ~= '' then
-		text = text.."❣ الاسم : "..user.data.full_name.."\n"
-	end
-	text = text.."❣ عدد الوسائط : "..user.data.counts.media.."\n"
-	text = text.."❣ اتابعهم : "..user.data.counts.follows.."\n"
-	text = text.."❣ المتابعون : "..user.data.counts.followed_by.."\n"
+    text = text.."💠 الاسم : "..user.data.full_name.."\n"
+    end
+    text = text.."💠 عدد الوسائط : "..user.data.counts.media.."\n"
+	text = text.."💠 تتابعهم : "..user.data.counts.follows.."\n"
+	text = text.."💠 المتابعون : "..user.data.counts.followed_by.."\n"
 	if user.data.website ~= '' then
-		text = text.."❣ الموقع : "..user.data.website.."\n"
+		text = text.."💠 الموقع : "..user.data.website.."\n"
 	end
-	text = text.."\n❣ #المطور @Th3_BOOS\n❣ #قناة_البوت : @dev_Th3_BOOS"
+	text = text.."\n💠 #المطور @II07II \n 💠 #قناة_البوت : https://telegram.me/joinchat/CUf-ST-UwlYXKMQWuHjVYw"
 	local file_path = download_to_file(user.data.profile_picture,"insta.png")     -- disable this line if you want to send profile photo as sticker
 	--local file_path = download_to_file(user.data.profile_picture,"insta.webp")    -- enable this line if you want to send profile photo as sticker
 	local cb_extra = {file_path=file_path}
@@ -73,16 +63,16 @@ local function instagramMedia(msg, query)
 	local data = ''
 	if jdat.data.caption then
 	      data = jdat.data.caption
-	      text = text.."❣ اليوزر : "..data.from.username:upper().."\n\n"
+	      text = text.."💠 اليوزر : "..data.from.username:upper().."\n\n"
 		  text = text..data.from.full_name.."\n\n"
 		  text = text..data.text.."\n\n"
-		  text = text.."❣ عدد الايك : "..jdat.data.likes.count.."\n"
+		  text = text.."💠 عدد الايك : "..jdat.data.likes.count.."\n"
     else
-	      text = text.."❣ اليوزر : "..jdat.data.user.username:upper().."\n"
-		  text = text.."❣ الاسم : "..jdat.data.user.full_name.."\n"
-		  text = text.."❣ عدد الايك: "..jdat.data.likes.count.."\n"
+	      text = text.."💠 اليوزر : "..jdat.data.user.username:upper().."\n"
+		  text = text.."💠 الاسم : "..jdat.data.user.full_name.."\n"
+		  text = text.."💠 عدد الايك: "..jdat.data.likes.count.."\n"
 	end
-	text = text.."\n@Th3_BOOS\n❣ #قناة_البوت : @dev_Th3_BOOS"
+	text = text.."\nhttps://telegram.me/joinchat/CUf-ST-UwlYXKMQWuHjVYw\n💠 #قناة_البوت : @II07II"
 	send_msg(receiver,text,ok_cb,false)
 end
 local function run(msg, matches)

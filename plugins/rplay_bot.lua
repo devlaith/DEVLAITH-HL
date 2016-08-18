@@ -6,13 +6,13 @@ if ( msg.text ) then
 
   if ( msg.to.type == "user" ) then
 
-     return "للتحدث مع المطور اضغط على المعرف التالي \n @Th3_BOOS \n  👾 "
+     return "لمراسلة المطور اضغط ع المعرف 🌞🖐🏾 \n @II07II \n  👾 "
      
   end 
    
 end 
 
--- #DEV @Th3_BOOS
+---{ BY #DEVLAITH _ TELEGRAM @II07II }---
 
 end 
 
@@ -24,4 +24,5 @@ return {
 } 
 
 end 
--- By @Th3_BOOS
+---{ BY #DEVLAITH _ TELEGRAM @II07II }---
+

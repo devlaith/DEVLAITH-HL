@@ -1,12 +1,4 @@
---[[
-▀▄ ▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀▄▀▄▄▀▀▄▄▀▀▄▄▀▀▄▄▀▀          
-▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄ ▄▀    BY Th3_BOOS                       ▀▄ ▄▀ 
-▀▄ ▄▀     BY Th3_BOOS (Th3_BOOS)           ▀▄ ▄▀ 
-▀▄ ▄▀ JUST WRITED BY Th3_BOOS              ▀▄ ▄▀   
-▀▄ ▄▀                                      ▀▄ ▄▀ 
-▀▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀▄▄▀▀▄▄▀▄▄▀▀
---]]
+
 
 -- data saved to moderation.json
 -- check moderation plugin
