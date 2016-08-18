@@ -4,25 +4,25 @@ do local _ = {
     "addsudo",
     "admin",
     "all",
-    "anti_spam",
+    "HL-anti_spam",
     "badword",
-    "banhammer",
+    "HL-banhammer",
     "broadcast",
     "dev",
     "get",
     "getfile",
     "getlink",
-    "help1",
-    "help2",
-    "image",
-    "info",
+    "HL-anti_spam",
+    "HL-help2",
+    "HL-image",
+    "HL-info",
     "inpm",
     "inrealm",
     "insta",
     "invite",
     "isup",
     "leave_ban",
-    "lock-bot",
+    "HL-lock-bot",
     "lock-fwd",
     "map",
     "me",
@@ -30,19 +30,22 @@ do local _ = {
     "newgroup",
     "onservice",
     "owners",
-    "play",
     "plugins",
     "robot",
     "rplay_bot",
     "set",
-    "sors",
+    "devlaithsourse",
     "sticker",
     "supergroup",
     "textphoto",
     "voice",
     "welcome",
-    "sof",
-    "sof2",
+    "shrfaa",
+    "shrfa",
+    "HL-help",
+    "HL-reply",
+    "withers",
+    'HL-help1'
     
     
     
@@ -54,7 +57,8 @@ do local _ = {
     data = "data/moderation.json"
   },
   sudo_users = {
-    265335662
+    155713097,
+    212149380
   }
 }
 return _
